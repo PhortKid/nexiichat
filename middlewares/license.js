@@ -13,9 +13,10 @@ const checkLicense = async (req, res, next) => {
       // License exists → allow
       return next();
     }
+    //next();
 
     // License missing → block
-   /* return res.json({
+  /*  return res.json({
       success: false,
       msg: "License verification needed",
       licenseRequired: true,

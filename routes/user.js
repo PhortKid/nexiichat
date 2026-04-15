@@ -287,7 +287,6 @@ router.post("/login", async (req, res) => {
         {
           uid: userFind[0].uid,
           role: "user",
-          password: userFind[0].password,
           email: userFind[0].email,
         },
         process.env.JWTKEY,

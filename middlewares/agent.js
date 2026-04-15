@@ -18,14 +18,14 @@ const validateAgent = async (req, res, next) => {
         });
       } else {
         const getAgent = await query(
-          `SELECT * FROM agents WHERE email = ? and password = ? `,
-          [decode.email, decode.password]
+          `SELECT * FROM agents WHERE uid = ? AND email = ?`,
+          [decode.uid, decode.email]
         );
 
         if (getAgent.length < 1) {
           return res.json({
             success: false,
-            msg: "Invalid token found, 480",
+            msg: "Agent not found",
             token,
             logout: true,
           });

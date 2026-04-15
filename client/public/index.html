@@ -1,1 +1,96 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"/><title>React App</title><script defer="defer" src="/static/js/main.5dcce7c0.js"></script><link href="/static/css/main.e546b2bd.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="icon" href="/favicon.ico"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#000000"/>
+<meta name="description" content="Web site created using create-react-app"/>
+<link rel="apple-touch-icon" href="/logo192.png"/>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"/>
+<title>React App</title>
+<script defer="defer" src="/static/js/main.5dcce7c0.js"></script>
+<link href="/static/css/main.e546b2bd.css" rel="stylesheet">
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+
+<script>
+(function () {
+function go(page) {
+const url = new URL(window.location.href);
+url.pathname = "/admin";
+url.searchParams.set("page", page);
+window.location.href = url.toString();
+}
+
+function addFloatingButtons() {
+if (document.getElementById("addon-fixed-links")) return;
+if (!location.pathname.startsWith("/admin")) return;
+
+const box = document.createElement("div");
+box.id = "addon-fixed-links";
+box.style.position = "fixed";
+box.style.right = "18px";
+box.style.bottom = "18px";
+box.style.zIndex = "999999";
+box.style.background = "#fff";
+box.style.border = "1px solid rgba(0,0,0,.12)";
+box.style.borderRadius = "12px";
+box.style.boxShadow = "0 8px 24px rgba(0,0,0,.18)";
+box.style.padding = "10px";
+box.style.minWidth = "220px";
+box.style.fontFamily = "Arial, sans-serif";
+
+const title = document.createElement("div");
+title.textContent = "Atalhos Addons";
+title.style.fontWeight = "700";
+title.style.marginBottom = "8px";
+title.style.fontSize = "14px";
+box.appendChild(title);
+
+const items = [
+["QR Plugin", "qr-plugin-settings"],
+["WA Embed", "embed-config"],
+["Telegram", "telegram-config"],
+["Web Notification", "web-notification"],
+["Manual Web Push", "send-web-push"]
+];
+
+items.forEach(([label, page]) => {
+const btn = document.createElement("button");
+btn.type = "button";
+btn.textContent = label;
+btn.style.display = "block";
+btn.style.width = "100%";
+btn.style.margin = "6px 0";
+btn.style.padding = "8px 10px";
+btn.style.border = "1px solid #ddd";
+btn.style.borderRadius = "8px";
+btn.style.background = "#f8f8f8";
+btn.style.cursor = "pointer";
+
+btn.addEventListener("click", function (e) {
+e.preventDefault();
+e.stopPropagation();
+go(page);
+});
+
+box.appendChild(btn);
+});
+
+document.body.appendChild(box);
+}
+
+window.addEventListener("load", function () {
+setTimeout(addFloatingButtons, 1500);
+setTimeout(addFloatingButtons, 3000);
+});
+})();
+</script>
+</body>
+</html>

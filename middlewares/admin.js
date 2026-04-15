@@ -17,18 +17,18 @@ const adminValidator = async (req, res, next) => {
                     logout: true
                 })
             } else {
-                const getAdmin = await query(`SELECT * FROM admin WHERE email = ? and password = ? `, [
-                    decode.email, decode.password
+                const getAdmin = await query(`SELECT * FROM admin WHERE uid = ? AND email = ?`, [
+                    decode.uid, decode.email
                 ])
                 if (getAdmin.length < 1) {
                     return res.json({
                         success: false,
-                        msg: "Invalid token found",
+                        msg: "Admin not found",
                         token,
                         logout: true
                     })
                 }
-                if (getAdmin[0].role === 'admin') {
+                if (getAdmin[0].role === 'admin' || getAdmin[0].role === 'super_admin') {
                     req.decode = decode
                     next()
                 } else {

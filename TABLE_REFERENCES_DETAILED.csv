@@ -1,0 +1,393 @@
+Table Name,Query Type,File,Line Number,Comment
+admin,SELECT,routes/web.js,463,Get admin user
+admin,SELECT,routes/admin.js,30,Find admin by email
+admin,SELECT,routes/admin.js,1094,Get all admins
+admin,SELECT,routes/admin.js,1135,Check email validity
+admin,SELECT,routes/inbox.js,43,Get admin UID
+agent_chats,SELECT,routes/agent.js,225,Get agent chats
+agent_chats,DELETE,routes/agent.js,258,Delete agent chats
+agent_chats,DELETE,routes/agent.js,268,Delete agent chats
+agent_chats,DELETE,routes/agent.js,288,Delete agent chats
+agent_chats,SELECT,routes/agent.js,506,Get agent chats
+agent_chats,SELECT,functions/function.js,795,Get agent chats
+agent_chats,SELECT,functions/function.js,801,Get agent chats by UID
+agent_chats,SELECT,functions/function.js,1028,Get agent chats
+agent_chats,SELECT,functions/function.js,1130,Get agent chats
+agent_chats,INSERT,functions/chatbot.js,485,Insert agent chat assignment
+agent_chats,INSERT,functions/chatbot.js,492,Insert agent chat
+agent_task,SELECT,routes/agent.js,1145,Get agent tasks by UID
+agent_task,SELECT,routes/admin.js,848,Get all agent tasks
+agent_task,DELETE,routes/user.js,2018,Delete agent task
+agent_task,INSERT,routes/user.js,1983,Insert agent task
+agents,SELECT,routes/agent.js,56,Find agent by email
+agents,SELECT,routes/agent.js,98,Get agents by owner_uid
+agents,SELECT,routes/agent.js,230,Get agent by UID
+agents,SELECT,routes/agent.js,358,Find agent by email
+agents,SELECT,routes/agent.js,439,Get agent by UID
+agents,SELECT,routes/agent.js,490,Get agent by UID
+agents,DELETE,routes/agent.js,173,Delete agent
+agents,SELECT,routes/admin.js,845,Get all agents
+agents,SELECT,helper/socket/index.js,173,Get agents by owner_uid
+agents,SELECT,helper/socket/index.js,432,Get agents by owner_uid
+agents,SELECT,helper/socket/index.js,880,Get agents
+agents,SELECT,helper/inbox/inbox.js,225,Get agent by ID
+agents,SELECT,helper/socket/index.js,1103,Get agent logs
+agents,UPDATE,routes/user.js,2165,Update agent email and name
+agents,UPDATE,routes/user.js,2170,Update agent mobile
+agents,UPDATE,functions/function.js,3467,Update FCM data
+agents,SELECT,functions/function.js,3453,Get FCM data
+beta_api_analytics,INSERT,functions/apiMessages.js,28,Insert analytics record
+beta_api_analytics,UPDATE,functions/apiMessages.js,30,Update analytics with duplicate key
+beta_api_logs,SELECT,routes/apiv2.js,321,Get API logs
+beta_api_logs,DELETE,routes/apiv2.js,351,Delete API logs
+beta_api_logs,UPDATE,routes/inbox.js,109,Update API log status
+beta_api_logs,UPDATE,routes/inbox.js,113,Update API log status
+beta_api_logs,UPDATE,routes/inbox.js,551,Update API log status and error
+beta_api_logs,UPDATE,routes/inbox.js,555,Update API log status
+beta_api_messages,SELECT,functions/apiMessages.js,17,Get message by meta ID
+beta_api_messages,UPDATE,functions/apiMessages.js,11,Update message status
+beta_campaign,SELECT,routes/broadcast.js,414,Get campaigns
+beta_campaign,SELECT,routes/broadcast.js,442,Get campaign by ID
+beta_campaign,SELECT,routes/broadcast.js,595,Get campaign ID
+beta_campaign,SELECT,routes/broadcast.js,1191,Get campaign ID
+beta_campaign,DELETE,routes/broadcast.js,1207,Delete campaign logs
+beta_campaign,DELETE,routes/broadcast.js,1211,Delete campaign
+beta_campaign,SELECT,loops/campaignBeta.js,93,Get campaigns
+beta_campaign,SELECT,routes/admin.js,834,Get chat statistics
+beta_campaign_logs,SELECT,routes/broadcast.js,137,Get campaign logs
+beta_campaign_logs,SELECT,routes/broadcast.js,455,Get campaign logs
+beta_campaign_logs,UPDATE,routes/inbox.js,126,Update campaign log delivery status
+beta_campaign_logs,UPDATE,routes/inbox.js,131,Update campaign log delivery status
+beta_campaign_logs,UPDATE,routes/inbox.js,564,Update campaign log delivery status
+beta_campaign_logs,UPDATE,routes/inbox.js,569,Update campaign log delivery status
+beta_campaign_logs,UPDATE,functions/function.js,1154,Update campaign log delivery status
+beta_campaign_logs,UPDATE,functions/function.js,1163,Update campaign log delivery status
+beta_campaign_logs,SELECT,loops/campaignBeta.js,311,Get campaign logs
+beta_chats,SELECT,routes/admin.js,834,Get all beta chats
+beta_chats,SELECT,helper/socket/index.js,198,Get beta chats by chat ID
+beta_chats,SELECT,helper/socket/index.js,203,Get beta chats by UID
+beta_chats,SELECT,helper/socket/index.js,294,Get beta chat by ID and UID
+beta_chats,SELECT,helper/socket/index.js,428,Get beta chat by ID
+beta_chats,DELETE,helper/socket/index.js,1002,Delete beta chat
+beta_chats,DELETE,helper/socket/index.js,1020,Delete beta chat
+beta_chats,SELECT,helper/socket/index.js,630,Get beta chat
+beta_chats,SELECT,helper/socket/index.js,654,Get beta chat
+beta_chats,INSERT,functions/function.js,372,Insert beta chat
+beta_chats,SELECT,functions/function.js,305,Check if chat exists
+beta_chats,SELECT,helper/addon/qr/processThings.js,48,Get beta chat
+beta_chats,SELECT,helper/addon/qr/processThings.js,98,Get unread count
+beta_chats,SELECT,helper/inbox/meta/index.js,75,Get beta chats
+beta_chatbot,SELECT,routes/chatbot.js,295,Get beta chatbot
+beta_chatbot,SELECT,routes/chatbot.js,374,Get beta chatbot by source
+beta_chatbot,DELETE,routes/chatbot.js,404,Delete beta chatbot
+beta_chatbot,SELECT,helper/socket/index.js,461,Get beta chatbot
+beta_chatbot,SELECT,helper/chatbot/meta/index.js,213,Get chatbot check
+beta_chatbot,SELECT,helper/chatbot/meta/index.js,218,Get chatbot
+beta_conversation,INSERT,functions/function.js,540,Insert conversation
+beta_conversation,INSERT,functions/function.js,244,Batch insert conversations
+beta_conversation,SELECT,routes/user.js,579,Get conversation by ID
+beta_conversation,SELECT,routes/admin.js,838,Get all conversations
+beta_conversation,SELECT,helper/socket/index.js,299,Get conversations by chat ID
+beta_conversation,SELECT,helper/socket/index.js,1007,Get conversations by chat ID
+beta_conversation,SELECT,helper/addon/qr/processThings.js,278,Get conversation by meta chat ID
+beta_conversation,SELECT,helper/addon/qr/processThings.js,411,Get conversation by meta chat ID
+beta_conversation,UPDATE,routes/user.js,596,Update conversation context
+beta_conversation,SELECT,functions/function.js,2892,Get conversations
+beta_flows,SELECT,routes/chatbot.js,244,Get beta flow
+beta_flows,INSERT,routes/chatFlow.js,166,Insert beta flow
+beta_flows,UPDATE,routes/chatFlow.js,159,Update beta flow
+beta_flows,SELECT,routes/admin.js,858,Get all beta flows
+broadcast,SELECT,routes/broadcast.js,121,Get broadcast
+broadcast,DELETE,routes/broadcast.js,203,Delete broadcast
+broadcast,SELECT,loops/campaignLoop.js,82,Get broadcast by status
+broadcast_log,SELECT,routes/broadcast.js,137,Get broadcast log
+broadcast_log,DELETE,routes/broadcast.js,208,Delete broadcast log
+broadcast_log,SELECT,loops/campaignLoop.js,48,Get broadcast log
+chat_tags,SELECT,helper/socket/index.js,423,Get chat tags
+chat_tags,SELECT,helper/socket/index.js,503,Get chat tags
+chat_tags,SELECT,helper/socket/index.js,519,Get chat tags
+chat_tags,DELETE,helper/socket/index.js,528,Delete chat tag
+chat_tags,SELECT,helper/socket/index.js,531,Get chat tags
+chat_tags,SELECT,helper/socket/index.js,548,Get chat label
+chat_tags,SELECT,helper/socket/index.js,593,Get chat label
+chat_widget,SELECT,routes/user.js,2090,Get chat widget by UID
+chat_widget,INSERT,routes/user.js,2065,Insert chat widget
+chatbot,SELECT,routes/chatbot.js,155,Get chatbot
+chatbot,DELETE,routes/chatbot.js,194,Delete chatbot
+chatbot,SELECT,functions/function.js,687,Get user chatbot
+chatbot,SELECT,functions/function.js,692,Get active chatbot
+chatbot,UPDATE,functions/function.js,704,Deactivate chatbot
+chatbot,SELECT,routes/user.js,1636,Get active chatbot count
+chatbot,SELECT,routes/user.js,1640,Get active chatbot count
+chatbot,SELECT,routes/user.js,1654,Get total chatbots
+chatbot,SELECT,helper/chatbot/meta/index.js,205,Get user chatbot
+chatbot,SELECT,helper/chatbot/meta/index.js,213,Get active chatbot
+chatbot,SELECT,helper/chatbot/meta/index.js,218,Get active chatbot
+chats,SELECT,routes/agent.js,525,Get chats by chat ID list
+chats,SELECT,routes/inbox.js,604,Get chats
+chats,DELETE,routes/inbox.js,1070,Delete chat
+chats,SELECT,routes/inbox.js,1184,Get all chats
+chats,SELECT,routes/user.js,696,Get chat by chat ID
+chats,SELECT,routes/user.js,726,Get chat by chat ID
+chats,SELECT,routes/user.js,1623,Get chats with unread
+chats,SELECT,routes/user.js,1627,Get chats with unread
+chats,SELECT,routes/user.js,1631,Get chats with unread
+chats,SELECT,routes/user.js,1651,Get total chats
+chats,UPDATE,routes/user.js,670,Update chat note
+chats,UPDATE,routes/user.js,708,Update chat tags
+chats,UPDATE,routes/user.js,741,Update chat tags
+chats,INSERT,functions/function.js,753,Insert chat
+chats,UPDATE,functions/function.js,772,Update chat
+chats,UPDATE,functions/function.js,1519,Update chat timestamp
+chats,UPDATE,functions/function.js,1525,Update chat read status
+chats,UPDATE,functions/function.js,1647,Update chat timestamp
+chats,UPDATE,functions/function.js,1651,Update chat read status
+chats,SELECT,functions/function.js,747,Get chat by chat ID
+chats,SELECT,functions/function.js,784,Get chats by UID
+chats,SELECT,functions/function.js,808,Get chats by chat ID list
+chats,SELECT,functions/function.js,1530,Get chats
+chats,SELECT,helper/inbox/meta/index.js,30,Get chat by chat ID
+contact,SELECT,routes/agent.js,534,Get contacts
+contact,SELECT,routes/broadcast.js,37,Get contacts by phonebook
+contact,INSERT,routes/user.js,819,Insert contact
+contact,DELETE,routes/user.js,846,Delete contact
+contact,SELECT,routes/user.js,644,Get contact
+contact,SELECT,routes/user.js,759,Get contact by mobile
+contact,SELECT,routes/user.js,811,Get contact by mobile
+contact,SELECT,routes/phonebook.js,263,Get contacts
+contact,DELETE,routes/phonebook.js,120,Delete contacts by phonebook
+contact,DELETE,routes/phonebook.js,276,Delete contacts by ID
+contact,UPDATE,routes/phonebook.js,88,Update contact
+contact,SELECT,routes/phonebook.js,67,Count contacts
+contact,INSERT,routes/phonebook.js,209,Batch insert contacts
+contact,INSERT,routes/phonebook.js,237,Insert contact
+contact,SELECT,helper/socket/index.js,167,Get contacts
+contact,SELECT,helper/socket/index.js,209,Get contacts
+contact,SELECT,helper/socket/index.js,437,Get contact by mobile
+contact,SELECT,helper/socket/index.js,1048,Get contact by mobile
+contact,DELETE,helper/socket/index.js,1085,Delete contact
+contact,SELECT,loops/campaignBeta.js,504,Get contacts
+contact_form,INSERT,routes/web.js,198,Insert contact form
+contact_form,SELECT,routes/admin.js,646,Get contact forms
+contact_form,DELETE,routes/admin.js,658,Delete contact form
+fcm_tokens,UPDATE,routes/user.js,3554,Update FCM token
+fcm_tokens,INSERT,routes/user.js,3562,Insert FCM token
+faq,SELECT,routes/admin.js,413,Get FAQs
+faq,DELETE,routes/admin.js,425,Delete FAQ
+flow,SELECT,routes/user.js,1660,Get total flows
+flow,SELECT,functions/chatbot.js,1055,Get flow by ID
+flow,INSERT,routes/chatFlow.js,51,Insert flow
+flow,UPDATE,routes/chatFlow.js,46,Update flow title
+flow,UPDATE,routes/chatFlow.js,334,Update flow AI list
+flow,UPDATE,routes/chatFlow.js,347,Update flow prevent list
+flow,UPDATE,functions/chatbot.js,801,Update flow prevent list
+flow,UPDATE,functions/chatbot.js,953,Update flow AI list
+flow_data,SELECT,functions/chatbot.js,515,Get flow data
+flow_data,SELECT,functions/chatbot.js,984,Get flow data
+flow_data,UPDATE,functions/chatbot.js,501,Update flow data
+flow_data,UPDATE,functions/chatbot.js,589,Update flow data
+flow_data,SELECT,helper/chatbot/meta/index.js,93,Get flow data
+flow_data,SELECT,helper/chatbot/meta/index.js,145,Get flow data
+flow_data,INSERT,functions/chatbot.js,507,Insert flow data
+flow_data,INSERT,functions/chatbot.js,547,Insert flow data
+flow_data,UPDATE,functions/chatbot.js,1000,Update flow data inputs
+flow_session,UPDATE,routes/chatFlow.js,436,Update flow session
+flow_session,UPDATE,routes/chatFlow.js,468,Update flow session
+flow_templates,SELECT,routes/admin.js,1551,Get flow templates
+flow_templates,DELETE,routes/admin.js,1568,Delete flow template
+g_auth,INSERT,routes/user.js,2354,Insert Google auth
+gen_links,SELECT,routes/admin.js,1247,Get generated links
+gen_links,DELETE,routes/admin.js,1259,Delete generated link
+gen_links,INSERT,routes/web.js,650,Insert generated link
+instance,SELECT,routes/qr.js,152,Get instances
+instance,SELECT,routes/qr.js,195,Get instances
+instance,DELETE,routes/qr.js,256,Delete instance
+instance,SELECT,routes/qr.js,562,Get instance by number
+instance,INSERT,routes/qr.js,124,Insert instance
+instance,UPDATE,routes/qr.js,169,Update instance status
+instance,UPDATE,routes/qr.js,212,Update instance status
+instance,UPDATE,routes/qr.js,302,Update instance data
+instance,SELECT,routes/admin.js,852,Get all instances
+instance,SELECT,routes/user.js,1713,Get active instances count
+instance,SELECT,helper/addon/qr/warmer/index.js,30,Get instance
+instance,SELECT,helper/socket/function.js,76,Get instance by number
+meta_api,SELECT,routes/broadcast.js,28,Get meta API
+meta_api,SELECT,routes/apiv2.js,109,Get meta API
+meta_api,SELECT,routes/apiv2.js,201,Get meta API
+meta_api,SELECT,routes/inbox.js,149,Get meta API by WABA ID
+meta_api,SELECT,routes/inbox.js,577,Get meta API
+meta_api,SELECT,routes/user.js,876,Get meta API
+meta_api,SELECT,routes/user.js,923,Get meta API
+meta_api,SELECT,routes/user.js,951,Get meta API
+meta_api,SELECT,routes/user.js,968,Get meta API
+meta_api,SELECT,routes/user.js,1004,Get meta API
+meta_api,SELECT,routes/user.js,1039,Get meta API
+meta_api,SELECT,routes/user.js,1088,Get meta API
+meta_api,INSERT,routes/user.js,893,Insert meta API
+meta_api,UPDATE,routes/user.js,881,Update meta API
+meta_api,INSERT,routes/user.js,933,Insert meta API
+meta_api,UPDATE,routes/user.js,928,Update meta API
+meta_api,UPDATE,routes/user.js,3167,Update meta API
+meta_api,INSERT,routes/user.js,3191,Insert meta API
+meta_api,SELECT,functions/function.js,860,Get meta API
+meta_api,SELECT,functions/function.js,898,Get meta API
+meta_api,SELECT,functions/function.js,934,Get meta API
+meta_api,SELECT,functions/function.js,969,Get meta API
+meta_api,SELECT,functions/function.js,1590,Get meta API
+meta_api,SELECT,loops/campaignLoop.js,38,Get meta API
+meta_api,SELECT,loops/campaignBeta.js,326,Get meta API
+meta_api,SELECT,routes/telegram.js,38,Get meta API
+meta_api,SELECT,routes/admin.js,1145,Get web config
+meta_api,SELECT,helper/socket/function.js,240,Get meta API
+meta_api,SELECT,helper/chatbot/meta/index.js,205,Get meta API
+meta_api,SELECT,helper/chatbot/meta/function.js,158,Get meta API
+meta_api,SELECT,helper/inbox/meta/index.js,152,Get meta API access token
+meta_templet_media,SELECT,functions/function.js,1808,Get meta template media
+meta_templet_media,SELECT,functions/function.js,1832,Get meta template media
+meta_templet_media,SELECT,functions/function.js,1856,Get meta template media
+meta_templet_media,INSERT,routes/user.js,1142,Insert meta template media
+mobile_app,SELECT,functions/function.js,3374,Get mobile app config
+mobile_app,SELECT,routes/admin.js,1368,Get mobile app config
+mobile_app,SELECT,routes/admin.js,1380,Update mobile app config
+orders,DELETE,routes/admin.js,632,Delete order
+orders,SELECT,routes/user.js,1473,Get order by data
+orders,INSERT,routes/user.js,1220,Insert order
+orders,INSERT,routes/user.js,1308,Insert order
+orders,INSERT,routes/user.js,1386,Insert order
+orders,INSERT,routes/user.js,1554,Insert order
+orders,INSERT,routes/user.js,1798,Insert order
+orders,UPDATE,routes/user.js,1249,Update order token
+orders,UPDATE,routes/user.js,1492,Update order data
+orders,UPDATE,routes/user.js,3386,Update order token
+orders,UPDATE,routes/user.js,3434,Update order data
+orders,SELECT,routes/user.js,1476,Get plan from order
+orders,SELECT,routes/admin.js,827,Get all orders
+page,SELECT,routes/admin.js,460,Get page by slug
+page,SELECT,routes/admin.js,495,Get pages
+page,DELETE,routes/admin.js,508,Delete page
+page,SELECT,routes/admin.js,671,Get page by slug
+page,SELECT,routes/admin.js,688,Get page by slug
+page,SELECT,routes/admin.js,718,Get page by slug
+partners,SELECT,routes/admin.js,365,Get partners
+partners,DELETE,routes/admin.js,377,Delete partner
+phonebook,SELECT,routes/broadcast.js,267,Get phonebook
+phonebook,SELECT,routes/phonebook.js,34,Get phonebook by name
+phonebook,SELECT,routes/phonebook.js,60,Get phonebooks
+phonebook,DELETE,routes/phonebook.js,119,Delete phonebook
+phonebook,INSERT,routes/phonebook.js,45,Insert phonebook
+phonebook,SELECT,routes/user.js,763,Get phonebooks
+phonebook,SELECT,helper/socket/index.js,445,Get phonebooks
+plan,SELECT,routes/admin.js,117,Get all plans
+plan,DELETE,routes/admin.js,141,Delete plan
+plan,SELECT,routes/admin.js,230,Get plan by ID
+plan,SELECT,routes/user.js,1159,Get plan by ID
+plan,SELECT,routes/user.js,1210,Get plan by ID
+plan,SELECT,routes/user.js,1269,Get plan by ID
+plan,SELECT,routes/user.js,1332,Get plan by ID
+quick_reply,SELECT,routes/agent.js,1204,Get quick reply
+quick_reply,INSERT,routes/user.js,3003,Insert quick reply
+rooms,SELECT,routes/inbox.js,698,Get rooms by UID
+rooms,SELECT,functions/function.js,782,Get room by UID
+rooms,SELECT,functions/function.js,812,Get room socket
+rooms,SELECT,functions/function.js,1017,Get room by UID
+rooms,SELECT,functions/function.js,1033,Get room socket
+rooms,SELECT,functions/function.js,1120,Get room by UID
+rooms,SELECT,functions/function.js,1135,Get room socket
+smtp,SELECT,routes/admin.js,745,Get SMTP config
+smtp,SELECT,routes/admin.js,766,Get SMTP config
+smtp,SELECT,routes/user.js,1855,Get SMTP config
+templets,SELECT,routes/templet.js,37,Get templates
+templets,DELETE,routes/templet.js,50,Delete templates
+templets,INSERT,routes/templet.js,19,Insert template
+templets,SELECT,routes/user.js,1667,Get total templates
+testimonial,SELECT,routes/admin.js,571,Get testimonials
+testimonial,DELETE,routes/admin.js,584,Delete testimonial
+user,SELECT,routes/admin.js,152,Get all users
+user,SELECT,routes/admin.js,173,Find user by email
+user,SELECT,routes/admin.js,185,Find user by UID
+user,SELECT,routes/admin.js,525,Get user by UID
+user,DELETE,routes/admin.js,1236,Delete user
+user,SELECT,routes/apiv2.js,35,Get user by UID
+user,INSERT,routes/user.js,104,Insert user
+user,INSERT,routes/user.js,168,Insert user
+user,INSERT,routes/user.js,243,Insert user
+user,SELECT,routes/user.js,634,Get user by UID
+user,SELECT,routes/user.js,1176,Get user by UID
+user,SELECT,routes/broadcast.js,74,Get user by UID
+user,UPDATE,routes/user.js,1602,Update user profile
+user,UPDATE,routes/user.js,1607,Update user profile
+user,UPDATE,routes/user.js,1804,Update user trial
+user,UPDATE,routes/user.js,1906,Update user password
+user,UPDATE,routes/user.js,1932,Update user API key
+user,UPDATE,routes/user.js,3093,Update user FCM data
+user,UPDATE,routes/user.js,3579,Update user FCM inbox
+user,UPDATE,functions/function.js,2102,Update user plan
+user,SELECT,functions/function.js,687,Get user by UID
+user,SELECT,functions/function.js,713,Get user by UID
+user,SELECT,functions/function.js,858,Get user by UID
+user,SELECT,functions/function.js,896,Get user by UID
+user,SELECT,functions/function.js,932,Get user by UID
+user,SELECT,functions/function.js,967,Get user by UID
+user,SELECT,functions/function.js,1498,Get user by UID
+user,SELECT,functions/function.js,1593,Get user by UID
+user,SELECT,functions/function.js,2308,Get user by UID
+user,SELECT,functions/function.js,2659,Get user by UID
+user,SELECT,routes/user.js,1696,Get user by UID
+user,SELECT,routes/user.js,1779,Get user by UID
+user,SELECT,routes/user.js,1825,Check email validity
+user,SELECT,routes/user.js,276,Get user by email
+user,SELECT,routes/user.js,95,Get user by email
+user,SELECT,routes/user.js,160,Get user by email
+user,SELECT,routes/user.js,234,Get user by email
+user,UPDATE,routes/user.js,3445,Update FCM data
+user,SELECT,routes/user.js,647,Get user by UID
+user,SELECT,routes/web.js,71,Get web public config
+user,SELECT,helper/socket/index.js,662,Get user by UID
+user,SELECT,helper/socket/index.js,707,Get user by UID
+user,SELECT,helper/chatbot/meta/index.js,205,Get user by UID
+user,SELECT,helper/chatbot/meta/function.js,161,Get user by UID
+user,SELECT,helper/chatbot/meta/function.js,281,Get user by UID
+user,SELECT,helper/addon/qr/warmer/functions.js,76,Get user by UID
+user,SELECT,helper/inbox/inbox.js,264,Get user by UID
+user,SELECT,helper/inbox/inbox.js,334,Get user by UID
+user,SELECT,helper/inbox/meta/index.js,19,Get user by UID
+wa_call_bot,SELECT,routes/waCall.js,200,Get WA call bot (as INSERT)
+wa_call_bot,UPDATE,routes/waCall.js,233,Update WA call bot status
+wa_call_broadcasts,SELECT,routes/inbox.js,457,Get WA call broadcasts
+wa_call_broadcasts,INSERT,routes/waCall.js,365,Insert WA call broadcast
+wa_call_broadcasts,UPDATE,routes/waCall.js,457,Update WA call broadcast status
+wa_call_broadcasts,UPDATE,routes/waCall.js,470,Update WA call broadcast logs
+wa_call_broadcasts,UPDATE,routes/waCall.js,513,Update WA call broadcast status
+wa_call_broadcasts,UPDATE,routes/waCall.js,526,Update WA call broadcast logs
+wa_call_broadcasts,UPDATE,routes/waCall.js,551,Update WA call broadcast status
+wa_call_broadcasts,UPDATE,routes/waCall.js,645,Update WA call broadcast contacts
+wa_call_flows,INSERT,routes/waCall.js,51,Insert WA call flow
+wa_call_flows,UPDATE,routes/waCall.js,44,Update WA call flow
+warmers,SELECT,helper/addon/qr/warmer/functions.js,19,Get warmers
+warmers,UPDATE,routes/user.js,2274,Update warmer instances
+warmers,UPDATE,routes/user.js,2280,Update warmer instances
+warmers,UPDATE,routes/user.js,2331,Update warmer status
+warmers,INSERT,routes/user.js,2306,Insert warmer
+warmer_script,SELECT,helper/addon/qr/warmer/functions.js,20,Get warmer scripts
+warmer_script,INSERT,routes/user.js,2215,Insert warmer script
+web_private,SELECT,routes/web.js,713,Get web private config
+web_private,SELECT,routes/admin.js,247,Get web private config
+web_private,SELECT,routes/user.js,1174,Get web private config
+web_private,SELECT,routes/user.js,1191,Get web private config
+web_private,SELECT,routes/user.js,1278,Get web private config
+web_private,SELECT,routes/user.js,1341,Get web private config
+web_private,SELECT,routes/user.js,1407,Get web private config
+web_private,SELECT,routes/user.js,1528,Get web private config
+web_private,SELECT,routes/admin.js,1324,Get web private config
+web_private,SELECT,routes/admin.js,1419,Get FCM config
+web_private,SELECT,routes/admin.js,1704,Get FCM config
+web_private,SELECT,routes/telegram.js,38,Get Telegram config
+web_public,SELECT,routes/web.js,530,Get web public config
+web_public,SELECT,routes/admin.js,128,Get web public config
+web_public,SELECT,routes/user.js,1224,Get web public config
+web_public,SELECT,routes/user.js,1279,Get web public config
+web_public,SELECT,routes/admin.js,1145,Get web public config
+web_public,SELECT,routes/admin.js,1270,Get web public config
+web_public,SELECT,routes/user.js,1835,Get web public config
+web_public,UPDATE,routes/web.js,264,Update web public config
+web_public,SELECT,routes/user.js,71,Get web public config

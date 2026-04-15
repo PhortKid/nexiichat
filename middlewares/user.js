@@ -18,25 +18,25 @@ const validateUser = async (req, res, next) => {
         });
       } else {
         const getUser = await query(
-          `SELECT * FROM user WHERE email = ? and password = ? `,
-          [decode.email, decode.password]
+          `SELECT * FROM user WHERE uid = ? AND email = ?`,
+          [decode.uid, decode.email]
         );
         if (getUser.length < 1) {
           return res.json({
             success: false,
-            msg: "Invalid token found",
+            msg: "User not found",
             token,
             logout: true,
           });
         }
-        if (getUser[0].role === "user") {
+        if (getUser[0].status === "active") {
           req.decode = decode;
           req.decode.userData = getUser[0];
           next();
         } else {
           return res.json({
             success: 0,
-            msg: "Unauthorized token",
+            msg: "Account is not active",
             token: token,
             logout: true,
           });

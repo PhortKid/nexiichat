@@ -584,11 +584,11 @@ router.post("/verify_license", async (req, res) => {
 
       return res.json({ success: true, msg: "License verified successfully" });
     } else {
-       return res.json({ success: true, msg: "License verified successfully" });
-     /* return res.json({
+      // return res.json({ success: true, msg: "License verified successfully" });
+      return res.json({
         success: false,
         msg: ress.msg || "Invalid license key",
-      });*/
+      });
     }
   } catch (err) {
     res.json({ success: false, error: err, msg: "Something went wrongg", err });
