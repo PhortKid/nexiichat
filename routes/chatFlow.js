@@ -612,8 +612,8 @@ router.get("/get_origians", validateUser, async (req, res) => {
 
     if (addons?.includes("QR")) {
       const instances = await query(
-        `SELECT * FROM instance WHERE uid = ? AND status = ?`,
-        [req.decode.uid, "ACTIVE"],
+        `SELECT * FROM instance WHERE uid = ? AND session_status = ?`,
+        [req.decode.uid, "connected"],
       );
 
       const correctOrign = instances.map((x) => ({

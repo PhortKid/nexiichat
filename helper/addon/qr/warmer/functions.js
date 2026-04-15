@@ -16,7 +16,7 @@ function mergeObjects(arrayA, arrayB, idKey, passedNameKey) {
 }
 
 async function getWarmerFromDB() {
-  const warmer = await query(`SELECT * FROM warmers WHERE is_active = ?`, [1]);
+  const warmer = await query(`SELECT * FROM warmers WHERE status = ?`, ['active']);
   const warmerScript = await query(`SELECT * FROM warmer_script`, []);
   return mergeObjects(warmer, warmerScript, "uid", "script");
 }

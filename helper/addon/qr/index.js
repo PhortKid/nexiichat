@@ -51,7 +51,7 @@ const getGroupData = async () => {
   return Promise.reject(null);
 };
 
-const checkQr = () => false;
+const checkQr = () => true;
 
 const getStorageConfig = async () => {
   return {

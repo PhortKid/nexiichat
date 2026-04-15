@@ -11,26 +11,56 @@ const checkPlan = async (req, res, next) => {
     const getUser = await query(`SELECT * FROM user WHERE uid = ?`, [
       req.decode.uid,
     ]);
-    const plan = getUser[0]?.plan;
 
-    if (!plan) {
+    if (!getUser[0]?.plan_id) {
       return res.json({
         success: false,
         msg: "Please subscribe a plan to proceed this.",
       });
     }
 
-    const numOfDyaLeft = getNumberOfDaysFromTimestamp(getUser[0]?.plan_expire);
+    // Get plan details
+    const getPlan = await query(`SELECT * FROM plan WHERE id = ?`, [
+      getUser[0].plan_id,
+    ]);
 
-    if (numOfDyaLeft < 1) {
+    if (getPlan.length < 1) {
+      return res.json({
+        success: false,
+        msg: "Plan not found. Please contact support.",
+      });
+    }
+
+    // Check for active subscription
+    const activeOrder = await query(`
+      SELECT * FROM orders
+      WHERE user_id = ? AND plan_id = ? AND status = 'completed'
+      AND expiry_date > NOW()
+      ORDER BY expiry_date DESC LIMIT 1
+    `, [getUser[0].id, getUser[0].plan_id]);
+
+    if (activeOrder.length < 1) {
       return res.json({
         success: false,
         msg: "Your plan was expired. Please buy a plan",
       });
-    } else {
-      req.plan = JSON.parse(getUser[0]?.plan);
-      next();
     }
+
+    // Parse plan features
+    const planFeatures = getPlan[0].features ? JSON.parse(getPlan[0].features) : {};
+
+    // Create plan object with features
+    req.plan = {
+      ...planFeatures,
+      contact_limit: getPlan[0].contact_limit,
+      message_limit: getPlan[0].message_limit,
+      qr_account: planFeatures.qr_account || 0,
+      allow_note: planFeatures.allow_note || 0,
+      allow_tag: planFeatures.allow_tag || 0,
+      wa_warmer: planFeatures.wa_warmer || 0,
+    };
+
+    next();
   } catch (err) {
     console.log(err);
     res.json({ msg: "server error", err });

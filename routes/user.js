@@ -1709,7 +1709,7 @@ router.get("/get_dashboard", validateUser, async (req, res) => {
           [uid],
         ),
         query(
-          "SELECT COUNT(*) as count FROM instance WHERE uid = ? AND status = 'ACTIVE'",
+          "SELECT COUNT(*) as count FROM instance WHERE uid = ? AND session_status = 'connected'",
           [uid],
         ),
       ]);
@@ -2327,8 +2327,8 @@ router.post("/change_warmer_status", validateUser, async (req, res) => {
   try {
     const { status } = req.body;
 
-    await query(`UPDATE warmers SET is_active = ? WHERE uid = ?`, [
-      status ? 1 : 0,
+    await query(`UPDATE warmers SET status = ? WHERE uid = ?`, [
+      status ? 'active' : 'paused',
       req.decode.uid,
     ]);
 

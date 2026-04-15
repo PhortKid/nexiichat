@@ -121,8 +121,8 @@ router.post(
       console.log({ title, uniqueId });
 
       await query(
-        `INSERT INTO instance (uid, title, uniqueId, status) VALUES (?,?,?,?)`,
-        [req.decode.uid, title, uniqueId, "GENERATING"],
+        `INSERT INTO instance (uid, instance_name, instance_key, session_status) VALUES (?,?,?,?)`,
+        [req.decode.uid, title, uniqueId, "connecting"],
       );
 
       await createSession(
@@ -162,15 +162,15 @@ router.get("/get_all_agent", validateAgent, async (req, res) => {
 
     // Process each instance
     for (let instance of instances) {
-      const check = getSession(instance.uniqueId);
+      const check = getSession(instance.instance_key);
 
       if (!check) {
-        // If no session, update status to "INACTIVE"
-        await query(`UPDATE instance SET status = ? WHERE uniqueId = ?`, [
-          "INACTIVE",
-          instance.uniqueId,
+        // If no session, update status to "disconnected"
+        await query(`UPDATE instance SET session_status = ? WHERE instance_key = ?`, [
+          "disconnected",
+          instance.instance_key,
         ]);
-        instance.status = "INACTIVE"; // Update status in response as well
+        instance.session_status = "disconnected"; // Update status in response as well
       }
     }
 
@@ -205,15 +205,15 @@ router.get("/get_all", validateUser, async (req, res) => {
 
     // Process each instance
     for (let instance of instances) {
-      const check = getSession(instance.uniqueId);
+      const check = getSession(instance.instance_key);
 
       if (!check) {
-        // If no session, update status to "INACTIVE"
-        await query(`UPDATE instance SET status = ? WHERE uniqueId = ?`, [
-          "INACTIVE",
-          instance.uniqueId,
+        // If no session, update status to "disconnected"
+        await query(`UPDATE instance SET session_status = ? WHERE instance_key = ?`, [
+          "disconnected",
+          instance.instance_key,
         ]);
-        instance.status = "INACTIVE"; // Update status in response as well
+        instance.session_status = "disconnected"; // Update status in response as well
       }
     }
 
@@ -559,8 +559,8 @@ async function processMessageRequest(params, res) {
   // Validate instance
   const formattedFrom = params.from.replace("+", "");
   const [instance] = await query(
-    `SELECT * FROM instance WHERE uid = ? AND number = ? AND status = ?`,
-    [user.uid, formattedFrom, "ACTIVE"],
+    `SELECT * FROM instance WHERE uid = ? AND phone_number = ? AND session_status = ?`,
+    [user.uid, formattedFrom, "connected"],
   );
 
   if (!instance) {

@@ -850,7 +850,7 @@ router.get("/get_dashboard_for_user", adminValidator, async (req, res) => {
     // Get instances data (WhatsApp connections)
     const getInstances = await query(`SELECT * FROM instance`, []);
     const activeInstances = getInstances.filter(
-      (instance) => instance.status === "ACTIVE",
+      (instance) => instance.session_status === "connected",
     ).length;
 
     // Get flows data
