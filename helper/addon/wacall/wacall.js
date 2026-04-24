@@ -3,7 +3,7 @@ function handleCalls() {
 }
 
 function checkWaCall() {
-  return false;
+  return true;
 }
 
 module.exports = { handleCalls, checkWaCall };

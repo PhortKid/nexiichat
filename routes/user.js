@@ -1697,7 +1697,7 @@ router.get("/get_dashboard", validateUser, async (req, res) => {
     // 2. Statistics
     const [agents, activeChats, completedTasks, activeInstances] =
       await Promise.all([
-        query("SELECT COUNT(*) as count FROM agents WHERE owner_uid = ?", [
+        query("SELECT COUNT(*) as count FROM agents WHERE uid = ?", [
           uid,
         ]),
         query(
@@ -1705,7 +1705,7 @@ router.get("/get_dashboard", validateUser, async (req, res) => {
           [uid],
         ),
         query(
-          "SELECT COUNT(*) as count FROM agent_task WHERE owner_uid = ? AND status = 'COMPLETED'",
+          "SELECT COUNT(*) as count FROM agent_task WHERE uid = ? AND status = 'COMPLETED'",
           [uid],
         ),
         query(

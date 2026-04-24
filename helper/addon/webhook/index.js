@@ -1,5 +1,5 @@
 function checkWebhook() {
-  return false;
+  return true;
 }
 
 module.exports = { checkWebhook };

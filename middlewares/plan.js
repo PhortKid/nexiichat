@@ -31,20 +31,26 @@ const checkPlan = async (req, res, next) => {
       });
     }
 
-    // Check for active subscription
-    const activeOrder = await query(`
-      SELECT * FROM orders
-      WHERE user_id = ? AND plan_id = ? AND status = 'completed'
-      AND expiry_date > NOW()
-      ORDER BY expiry_date DESC LIMIT 1
-    `, [getUser[0].id, getUser[0].plan_id]);
+    // Check for active subscription (only if orders exist)
+    const orderCount = await query(`SELECT COUNT(*) as count FROM orders WHERE user_id = ?`, [getUser[0].id]);
+    
+    if (orderCount[0].count > 0) {
+      // If orders exist, check for active subscription
+      const activeOrder = await query(`
+        SELECT * FROM orders
+        WHERE user_id = ? AND plan_id = ? AND status = 'completed'
+        AND expiry_date > NOW()
+        ORDER BY expiry_date DESC LIMIT 1
+      `, [getUser[0].id, getUser[0].plan_id]);
 
-    if (activeOrder.length < 1) {
-      return res.json({
-        success: false,
-        msg: "Your plan was expired. Please buy a plan",
-      });
+      if (activeOrder.length < 1) {
+        return res.json({
+          success: false,
+          msg: "Your plan was expired. Please buy a plan",
+        });
+      }
     }
+    // If no orders exist, allow access if plan_id is assigned
 
     // Parse plan features
     const planFeatures = getPlan[0].features ? JSON.parse(getPlan[0].features) : {};
@@ -54,10 +60,10 @@ const checkPlan = async (req, res, next) => {
       ...planFeatures,
       contact_limit: getPlan[0].contact_limit,
       message_limit: getPlan[0].message_limit,
-      qr_account: planFeatures.qr_account || 0,
-      allow_note: planFeatures.allow_note || 0,
-      allow_tag: planFeatures.allow_tag || 0,
-      wa_warmer: planFeatures.wa_warmer || 0,
+      qr_account: planFeatures.qr_accounts || planFeatures.qr_account || 0,
+      allow_note: planFeatures.notes ? 1 : 0,
+      allow_tag: planFeatures.tags ? 1 : 0,
+      wa_warmer: planFeatures.wa_warmer ? 1 : 0,
     };
 
     next();
